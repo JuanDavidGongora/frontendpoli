@@ -1,0 +1,42 @@
+{
+    "services": [
+        {
+            "id": 1,
+            "name": "Rog Strix",
+            "price": "$15.000.000",
+            "image": "images/slider1.jpg",
+            "description": "Portátiles destacados diseñados para proporcionar un rendimiento de clase mundial para jugadores y creadores competitivos",
+            "quantity": 10,
+            "promotion": true
+        },
+        {
+            "id": 2,
+            "name": "Memoria ram ddr5",
+            "price": "$400.000",
+            "image": "images/ddr5fury.jpg",
+            "description": "La SODIMM DDR5 Kingston FURY™ Impact lleva la memoria de vanguardia a las notebooks y PCs de factor de forma pequeño. Con certificación Intel® XMP 3.0 y/o perfiles Plug N Play1, ofrece capacidades de hasta 64GB y velocidades de hasta 6400MT/s para un potente aumento del rendimiento.",
+            "quantity": 5,
+            "promotion": true
+        },
+         {
+            "id": 3,
+            "name": "Procesador Intel core ultra Serie 2",
+            "price": "$25.000.000",
+            "image": "images/intelultra.jpg",
+            "description": "Los procesadores Intel® Core™ Ultra (Series 2) fueron diseñados para convertirte en un líder en IA. Desde una productividad superpotenciada hasta una mayor seguridad y velocidad, la IA de Intel es la clave para un desempeño del procesador de primer nivel.",
+            "quantity": 10,
+            "promotion": true
+        },
+         {
+            "id": 4,
+            "name": "rog ally x",
+            "price": "$15.000.000",
+            "image": "images/rogallyx.jpg",
+            "description": "Con el procesador AMD Ryzen Z1 Extreme con gráficos RDNA 3, 24 GB de RAM LPDDR5x, una SSD PCIe 4.0 y una ranura para tarjetas microSD UH-II para almacenamiento ampliado, el Ally X hace posible jugar cualquier juego en la palma de tu mano",
+            "quantity": 10,
+            "promotion": true
+        }
+
+       
+    ]
+}

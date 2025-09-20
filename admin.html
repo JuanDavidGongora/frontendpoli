@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div class="admin-container">
+        <img src="images/logo.jpg" alt="Logo de la Empresa" class="admin-logo">
+        <h2>Panel de Administración</h2>
+        <form id="add-service-form">
+            <input type="text" id="service-name" placeholder="Nombre del Servicio" required>
+            <input type="text" id="service-price" placeholder="Precio del Servicio" required>
+            <input type="file" id="service-image" accept="image/*" required>
+            <textarea id="service-description" placeholder="Descripción del Servicio" required></textarea>
+            <button type="submit" class="admin-button">Añadir Servicio</button>
+        </form>
+        <div id="services-list">
+            <!-- Los servicios se cargarán dinámicamente aquí -->
+        </div>
+    </div>
+
+    <script src="scripts/service-detail.js"></script>
+</body>
+</html>

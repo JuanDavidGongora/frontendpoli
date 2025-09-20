@@ -1,0 +1,288 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Orbitron', sans-serif; /* Fuente tecnológica */
+    display: flex;
+    flex-direction: column;
+    background-color: #000000; /* Negro */
+    color: white; /* Letras blancas */
+}
+
+header, footer {
+    background-color: #2F2F2F; /* Negro más claro */
+    color: #FF0000; /* Letras rojas */
+    text-align: center;
+    padding: 1rem 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #FF0000; /* Letras rojas */
+    text-decoration: none;
+}
+
+.slider {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.slider img.active {
+    opacity: 1;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+}
+
+#home {
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+}
+
+.home-content {
+    margin-top: 2rem;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.company-logo {
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.company-name {
+    font-family: 'Orbitron', sans-serif; /* Fuente tecnológica */
+    font-weight: bold; /* Letra más gruesa */
+    color: #FF0000; /* Rojo */
+    font-size: 2.5rem; /* Tamaño de fuente más grande */
+    text-shadow: 2px 2px 4px #000000; /* Sombra para efecto matrix */
+}
+
+#services {
+    padding: 2rem 0;
+    width: 100%;
+    max-width: 800px;
+}
+
+.services-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.service-item {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin: 1rem;
+    text-align: center;
+    width: 200px;
+}
+
+.service-item img {
+    width: 100%;
+    height: auto;
+}
+
+#login {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+#login-form {
+    display: inline-block;
+    text-align: left;
+}
+
+#login-form input {
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border: none;
+    border-radius: 20px;
+    background-color: #2F2F2F;
+    color: #FF0000;
+}
+
+.login-button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 20px;
+    background-color: #FF0000;
+    color: white;
+    font-size: 1rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+footer {
+    background-color: #2F2F2F; /* Negro más claro */
+    color: #FF0000; /* Letras rojas */
+    text-align: center;
+    padding: 1rem 0;
+    width: 100%;
+}
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.login-container h2 {
+    margin-bottom: 1rem;
+    color: #FF0000; /* Letras rojas */
+}
+
+.login-logo {
+    max-width: 100px; /* Ajusta el tamaño de la imagen */
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.login-container form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+.login-container input {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 20px;
+    background-color: #2F2F2F;
+    color: #FF0000;
+}
+
+.login-container button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 20px;
+    background-color: #FF0000;
+    color: white;
+    font-size: 1rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.admin-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.admin-container h2 {
+    margin-bottom: 1rem;
+    color: #FF0000; /* Letras rojas */
+}
+
+.admin-logo {
+    max-width: 100px; /* Ajusta el tamaño de la imagen */
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.admin-container form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+.admin-container input, .admin-container textarea {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 20px;
+    background-color: #2F2F2F;
+    color: #FF0000;
+}
+
+.admin-button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 20px;
+    background-color: #FF0000;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#services-list {
+    margin-top: 2rem;
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.service-item {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin: 1rem;
+    text-align: center;
+    width: 200px;
+}
+
+.service-item img {
+    width: 100%;
+    height: auto;
+}
