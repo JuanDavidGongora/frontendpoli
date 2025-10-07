@@ -1,10 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Cargar servicios desde el archivo JSON
-    fetch('data/services.json')
-        .then(response => response.json())
-        .then(data => {
-            const servicesList = document.querySelector('.services-list');
-            data.services.forEach(service => {
+    // Obtener servicios de localStorage o JSON
+    function getServices() {
+        const local = JSON.parse(localStorage.getItem('services'));
+        if (local && Array.isArray(local)) return Promise.resolve(local);
+        return fetch('data/services.json')
+            .then(res => res.json())
+            .then(data => data.services || []);
+    }
+
+    // Mostrar servicios en el inicio
+    const servicesList = document.querySelector('.services-list');
+    if (servicesList) {
+        getServices().then(services => {
+            services.forEach(service => {
                 const serviceItem = document.createElement('div');
                 serviceItem.classList.add('service-item');
                 serviceItem.innerHTML = `
@@ -18,31 +26,35 @@ document.addEventListener('DOMContentLoaded', () => {
                 servicesList.appendChild(serviceItem);
             });
         });
+    }
 
     // Manejar el formulario de login
     const loginForm = document.getElementById('login-form');
-    loginForm.addEventListener('submit', (event) => {
-        event.preventDefault();
-        const username = document.getElementById('username').value;
-        const password = document.getElementById('password').value;
-        // Verificar las credenciales
-        if (verifyCredentials(username, password)) {
-            window.location.href = 'admin.html'; // Redirige a la página de administración
-        } else {
-            alert('Credenciales incorrectas');
-        }
-    });
+    if (loginForm) {
+        loginForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            if (verifyCredentials(username, password)) {
+                window.location.href = 'admin.html';
+            } else {
+                alert('Credenciales incorrectas');
+            }
+        });
+    }
 
     // Manejar el botón de crear cuenta
     const createAccountBtn = document.getElementById('create-account-btn');
-    createAccountBtn.addEventListener('click', () => {
-        const username = prompt('Introduce un nombre de usuario:');
-        const password = prompt('Introduce una contraseña:');
-        if (username && password) {
-            createAccount(username, password);
-            alert('Cuenta creada exitosamente');
-        }
-    });
+    if (createAccountBtn) {
+        createAccountBtn.addEventListener('click', () => {
+            const username = prompt('Introduce un nombre de usuario:');
+            const password = prompt('Introduce una contraseña:');
+            if (username && password) {
+                createAccount(username, password);
+                alert('Cuenta creada exitosamente');
+            }
+        });
+    }
 
     // Función para verificar credenciales
     function verifyCredentials(username, password) {
@@ -65,49 +77,11 @@ document.addEventListener('DOMContentLoaded', () => {
             img.classList.toggle('active', i === index);
         });
     }
-    setInterval(() => {
-        currentIndex = (currentIndex + 1) % sliderImages.length;
+    if (sliderImages.length > 0) {
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % sliderImages.length;
+            showSlide(currentIndex);
+        }, 3000);
         showSlide(currentIndex);
-    }, 3000);
-    showSlide(currentIndex);
-
- // Cargar detalles del servicio
-    const urlParams = new URLSearchParams(window.location.search);
-    const serviceId = urlParams.get('id');
-    if (serviceId) {
-        fetch('data/services.json')
-            .then(response => response.json())
-            .then(data => {
-                const service = data.services.find(s => s.id == serviceId);
-                if (service) {
-                    document.getElementById('service-image').src = service.image;
-                    document.getElementById('service-name').textContent = service.name;
-                    document.getElementById('service-price').textContent = `Precio: ${service.price}`;
-                    document.getElementById('service-description').textContent = `Descripción: ${service.description}`;
-                    document.getElementById('service-quantity').textContent = `Cantidad Disponible: ${service.quantity}`;
-                    document.getElementById('service-promotion').textContent = service.promotion ? 'En Promoción' : 'No en Promoción';
-                }
-            });
     }
 });
-
-
-
-let current = 0;
-const images = document.querySelectorAll('.slider img');
-
-function showImage(index) {
-    images.forEach((img, i) => {
-        img.classList.toggle('active', i === index);
-    });
-}
-
-function nextImage() {
-    current = (current + 1) % images.length;
-    showImage(current);
-}
-
-if (images.length > 0) {
-    showImage(current);
-    setInterval(nextImage, 3000); // Cambia cada 3 segundos
-}
