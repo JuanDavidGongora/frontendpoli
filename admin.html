@@ -8,21 +8,24 @@
 </head>
 <body>
     <div class="admin-container">
-        <img src="images/logo.jpg" alt="Logo de la Empresa" class="admin-logo">
+        <img src="images/logo.jpg" alt="Logo" class="admin-logo">
         <h2>Panel de Administración</h2>
-        <button id="go-home-btn" class="admin-button">Ir a Inicio</button>
+        <button id="go-home-btn" class="admin-button">Ir al Catálogo</button>
         <form id="add-service-form">
-            <input type="text" id="service-name" placeholder="Nombre del Servicio" required>
-            <input type="text" id="service-price" placeholder="Precio del Servicio" required>
-            <input type="file" id="service-image" accept="image/*" required>
-            <textarea id="service-description" placeholder="Descripción del Servicio" required></textarea>
-            <button type="submit" class="admin-button">Añadir Servicio</button>
+            <input type="text" id="service-name" placeholder="Nombre del artículo" required>
+            <input type="text" id="service-price" placeholder="Precio (Ej: 500000)" required>
+            <input type="text" id="service-category" placeholder="Categoría" required>
+            <input type="text" id="service-brand" placeholder="Marca" required>
+            <input type="number" id="service-quantity" placeholder="Cantidad en stock" min="1" value="1" required>
+            <input type="file" id="service-image" accept="image/*">
+            <textarea id="service-description" placeholder="Descripción del artículo" required></textarea>
+            <button type="submit" class="admin-button">Añadir Artículo</button>
         </form>
-        <div id="services-list">
-            <!-- Los servicios se cargarán dinámicamente aquí -->
-        </div>
+        <div id="services-list" class="admin-products-list"></div>
     </div>
 
+    <script src="scripts/products.js"></script>
+    <script src="scripts/auth.js"></script>
     <script src="scripts/admin.js"></script>
 </body>
 </html>

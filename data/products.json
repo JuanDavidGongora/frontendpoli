@@ -1,0 +1,400 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Rog Strix G16",
+      "price": 15000000,
+      "priceDisplay": "$15.000.000",
+      "image": "images/slider1.jpg",
+      "description": "Portátil gaming de alto rendimiento con pantalla 165Hz, diseñado para jugadores y creadores competitivos. Incluye teclado RGB per-key y sistema de refrigeración avanzado.",
+      "quantity": 10,
+      "promotion": true,
+      "category": "Portátiles",
+      "brand": "ASUS",
+      "characteristics": {
+        "procesador": "Intel Core i9",
+        "ram": "32GB DDR5",
+        "almacenamiento": "1TB SSD",
+        "pantalla": "16\" 165Hz"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Memoria RAM DDR5 Kingston Fury",
+      "price": 400000,
+      "priceDisplay": "$400.000",
+      "image": "images/ddr5fury.jpg",
+      "description": "SODIMM DDR5 Kingston FURY Impact con certificación Intel XMP 3.0. Capacidad de 32GB y velocidades de hasta 6400MT/s para notebooks y PCs compactas.",
+      "quantity": 25,
+      "promotion": true,
+      "category": "Componentes",
+      "brand": "Kingston",
+      "characteristics": {
+        "tipo": "DDR5 SODIMM",
+        "capacidad": "32GB",
+        "velocidad": "6400MT/s",
+        "latencia": "CL38"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Procesador Intel Core Ultra Serie 2",
+      "price": 2500000,
+      "priceDisplay": "$2.500.000",
+      "image": "images/intelultra.jpg",
+      "description": "Procesador Intel Core Ultra con IA integrada para productividad, seguridad y rendimiento de primer nivel en gaming y creación de contenido.",
+      "quantity": 15,
+      "promotion": false,
+      "category": "Componentes",
+      "brand": "Intel",
+      "characteristics": {
+        "nucleos": "16",
+        "hilos": "22",
+        "frecuencia": "5.4 GHz",
+        "socket": "LGA1851"
+      }
+    },
+    {
+      "id": 4,
+      "name": "ROG Ally X",
+      "price": 3500000,
+      "priceDisplay": "$3.500.000",
+      "image": "images/rogallyx.jpg",
+      "description": "Consola portátil con AMD Ryzen Z1 Extreme, 24GB RAM LPDDR5x, SSD PCIe 4.0 y ranura microSD. Juega cualquier título AAA en la palma de tu mano.",
+      "quantity": 8,
+      "promotion": true,
+      "category": "Consolas",
+      "brand": "ASUS",
+      "characteristics": {
+        "procesador": "AMD Ryzen Z1 Extreme",
+        "ram": "24GB",
+        "almacenamiento": "1TB SSD",
+        "pantalla": "7\" 120Hz"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Teclado Mecánico Razer BlackWidow V4",
+      "price": 650000,
+      "priceDisplay": "$650.000",
+      "image": "images/products/05-teclado-razer.jpg",
+      "description": "Teclado mecánico con switches Razer Green, retroiluminación Chroma RGB y reposamuñecas magnético. Ideal para gaming competitivo.",
+      "quantity": 20,
+      "promotion": false,
+      "category": "Periféricos",
+      "brand": "Razer",
+      "characteristics": {
+        "switches": "Mecánicos Green",
+        "conexion": "USB-C",
+        "teclas": "104",
+        "rgb": "Chroma RGB"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Mouse Logitech G Pro X Superlight 2",
+      "price": 580000,
+      "priceDisplay": "$580.000",
+      "image": "images/products/06-mouse-logitech.jpg",
+      "description": "Mouse inalámbrico ultraligero de 60g con sensor HERO 2 de 32K DPI. Batería de hasta 95 horas y diseño simétrico para agarre claw/fingertip.",
+      "quantity": 30,
+      "promotion": true,
+      "category": "Periféricos",
+      "brand": "Logitech",
+      "characteristics": {
+        "peso": "60g",
+        "dpi": "32000",
+        "conexion": "Lightspeed 2.4GHz",
+        "bateria": "95 horas"
+      }
+    },
+    {
+      "id": 7,
+      "name": "Monitor MSI MAG 27CQ6F",
+      "price": 1200000,
+      "priceDisplay": "$1.200.000",
+      "image": "images/products/07-monitor-msi.jpg",
+      "description": "Monitor curvo 27\" QHD 180Hz con panel VA, 1ms de respuesta y AMD FreeSync Premium. Perfecto para gaming inmersivo.",
+      "quantity": 12,
+      "promotion": false,
+      "category": "Monitores",
+      "brand": "MSI",
+      "characteristics": {
+        "tamano": "27\"",
+        "resolucion": "2560x1440",
+        "frecuencia": "180Hz",
+        "panel": "VA Curvo"
+      }
+    },
+    {
+      "id": 8,
+      "name": "Auriculares HyperX Cloud III",
+      "price": 420000,
+      "priceDisplay": "$420.000",
+      "image": "images/products/08-auriculares-hyperx.jpg",
+      "description": "Auriculares gaming con drivers de 53mm, micrófono desmontable con cancelación de ruido y almohadillas de memory foam.",
+      "quantity": 18,
+      "promotion": true,
+      "category": "Audio",
+      "brand": "HyperX",
+      "characteristics": {
+        "drivers": "53mm",
+        "impedancia": "32 Ohm",
+        "conexion": "3.5mm + USB",
+        "microfono": "Desmontable"
+      }
+    },
+    {
+      "id": 9,
+      "name": "SSD Samsung 990 Pro 2TB",
+      "price": 890000,
+      "priceDisplay": "$890.000",
+      "image": "images/products/09-ssd-samsung.jpg",
+      "description": "SSD NVMe PCIe 4.0 con velocidades de lectura de 7450 MB/s. Ideal para cargar juegos y aplicaciones al instante.",
+      "quantity": 22,
+      "promotion": false,
+      "category": "Almacenamiento",
+      "brand": "Samsung",
+      "characteristics": {
+        "capacidad": "2TB",
+        "interfaz": "PCIe 4.0 NVMe",
+        "lectura": "7450 MB/s",
+        "escritura": "6900 MB/s"
+      }
+    },
+    {
+      "id": 10,
+      "name": "Tarjeta Gráfica RTX 4070 Super",
+      "price": 3200000,
+      "priceDisplay": "$3.200.000",
+      "image": "images/products/10-rtx-4070.jpg",
+      "description": "GPU NVIDIA GeForce RTX 4070 Super con 12GB GDDR6X, ray tracing de tercera generación y DLSS 3 para gaming 4K.",
+      "quantity": 6,
+      "promotion": true,
+      "category": "Componentes",
+      "brand": "NVIDIA",
+      "characteristics": {
+        "vram": "12GB GDDR6X",
+        "cuda": "7168 cores",
+        "tdp": "220W",
+        "interfaz": "PCIe 4.0"
+      }
+    },
+    {
+      "id": 11,
+      "name": "Silla Gaming Secretlab Titan Evo",
+      "price": 2800000,
+      "priceDisplay": "$2.800.000",
+      "image": "images/products/11-silla-gaming.jpg",
+      "description": "Silla ergonómica premium con soporte lumbar magnético 4-way, reposabrazos 4D y tapizado de cuero sintético de alta durabilidad.",
+      "quantity": 5,
+      "promotion": false,
+      "category": "Mobiliario",
+      "brand": "Secretlab",
+      "characteristics": {
+        "material": "Cuero sintético",
+        "peso_max": "180kg",
+        "reclinacion": "165°",
+        "garantia": "5 años"
+      }
+    },
+    {
+      "id": 12,
+      "name": "Webcam Logitech Brio 4K",
+      "price": 750000,
+      "priceDisplay": "$750.000",
+      "image": "images/products/12-webcam-logitech.jpg",
+      "description": "Webcam 4K Ultra HD con HDR, enfoque automático y cancelación de ruido dual. Certificada para Windows Hello.",
+      "quantity": 14,
+      "promotion": false,
+      "category": "Periféricos",
+      "brand": "Logitech",
+      "characteristics": {
+        "resolucion": "4K 30fps",
+        "campo": "90°",
+        "hdr": "Si",
+        "microfono": "Dual estéreo"
+      }
+    },
+    {
+      "id": 13,
+      "name": "Libro Clean Code - Robert Martin",
+      "price": 120000,
+      "priceDisplay": "$120.000",
+      "image": "images/products/13-libro-clean-code.jpg",
+      "description": "Manual esencial de ingeniería de software sobre cómo escribir código limpio, legible y mantenible. Edición en inglés.",
+      "quantity": 40,
+      "promotion": false,
+      "category": "Libros",
+      "brand": "Prentice Hall",
+      "characteristics": {
+        "idioma": "Inglés",
+        "paginas": "464",
+        "formato": "Tapa blanda",
+        "autor": "Robert C. Martin"
+      }
+    },
+    {
+      "id": 14,
+      "name": "Camiseta TechGamers Logo",
+      "price": 85000,
+      "priceDisplay": "$85.000",
+      "image": "images/products/14-camiseta.jpg",
+      "description": "Camiseta 100% algodón con logo TechGamers estampado en serigrafía de alta calidad. Disponible en talla M.",
+      "quantity": 50,
+      "promotion": true,
+      "category": "Ropa",
+      "brand": "TechGamers",
+      "characteristics": {
+        "material": "100% Algodón",
+        "talla": "M",
+        "color": "Negro",
+        "cuidado": "Lavado a máquina 30°"
+      }
+    },
+    {
+      "id": 15,
+      "name": "Zapatillas Nike Air Max 270",
+      "price": 520000,
+      "priceDisplay": "$520.000",
+      "image": "images/products/15-zapatillas-nike.jpg",
+      "description": "Zapatillas lifestyle con unidad Air Max visible en el talón. Malla transpirable y suela de goma duradera.",
+      "quantity": 16,
+      "promotion": false,
+      "category": "Calzado",
+      "brand": "Nike",
+      "characteristics": {
+        "talla": "42",
+        "color": "Negro/Rojo",
+        "material": "Malla sintética",
+        "suela": "Goma"
+      }
+    },
+    {
+      "id": 16,
+      "name": "Smartwatch Samsung Galaxy Watch 6",
+      "price": 1100000,
+      "priceDisplay": "$1.100.000",
+      "image": "images/products/16-smartwatch.jpg",
+      "description": "Reloj inteligente con monitor de salud avanzado, GPS integrado, resistencia al agua IP68 y batería de 40 horas.",
+      "quantity": 11,
+      "promotion": true,
+      "category": "Electrónicos",
+      "brand": "Samsung",
+      "characteristics": {
+        "pantalla": "1.5\" AMOLED",
+        "bateria": "40 horas",
+        "resistencia": "IP68",
+        "gps": "Integrado"
+      }
+    },
+    {
+      "id": 17,
+      "name": "Tablet Samsung Galaxy Tab S9",
+      "price": 2800000,
+      "priceDisplay": "$2.800.000",
+      "image": "images/products/17-tablet-samsung.jpg",
+      "description": "Tablet premium con pantalla Dynamic AMOLED 2X de 11\", procesador Snapdragon 8 Gen 2 y S Pen incluido.",
+      "quantity": 9,
+      "promotion": false,
+      "category": "Tablets",
+      "brand": "Samsung",
+      "characteristics": {
+        "pantalla": "11\" AMOLED 120Hz",
+        "ram": "12GB",
+        "almacenamiento": "256GB",
+        "spen": "Incluido"
+      }
+    },
+    {
+      "id": 18,
+      "name": "Router WiFi 6 ASUS RT-AX86U Pro",
+      "price": 980000,
+      "priceDisplay": "$980.000",
+      "image": "images/products/18-router-wifi.jpg",
+      "description": "Router gaming WiFi 6 con triple nivel de aceleración, AiMesh y puerto 2.5G para conexiones ultrarrápidas.",
+      "quantity": 13,
+      "promotion": false,
+      "category": "Redes",
+      "brand": "ASUS",
+      "characteristics": {
+        "estandar": "WiFi 6 (802.11ax)",
+        "velocidad": "5700 Mbps",
+        "puertos": "4 LAN + 1 WAN 2.5G",
+        "cobertura": "Hasta 150m²"
+      }
+    },
+    {
+      "id": 19,
+      "name": "Micrófono Blue Yeti X",
+      "price": 680000,
+      "priceDisplay": "$680.000",
+      "image": "images/products/19-microfono-blue.jpg",
+      "description": "Micrófono USB condensador con cuatro patrones polares, medidor LED y control de ganancia para streaming y podcasting.",
+      "quantity": 17,
+      "promotion": true,
+      "category": "Audio",
+      "brand": "Blue",
+      "characteristics": {
+        "tipo": "Condensador USB",
+        "patrones": "4 polares",
+        "frecuencia": "20Hz-20kHz",
+        "conexion": "USB"
+      }
+    },
+    {
+      "id": 20,
+      "name": "Mochila Gaming Razer Iskur X",
+      "price": 320000,
+      "priceDisplay": "$320.000",
+      "image": "images/products/20-mochila-razer.jpg",
+      "description": "Mochila resistente al agua con compartimento acolchado para laptop de hasta 17\" y bolsillos organizadores para periféricos.",
+      "quantity": 24,
+      "promotion": false,
+      "category": "Accesorios",
+      "brand": "Razer",
+      "characteristics": {
+        "capacidad": "25L",
+        "laptop": "Hasta 17\"",
+        "material": "Poliéster 900D",
+        "resistencia": "Repelente al agua"
+      }
+    },
+    {
+      "id": 21,
+      "name": "PlayStation 5 Slim",
+      "price": 2400000,
+      "priceDisplay": "$2.400.000",
+      "image": "images/products/21-ps5.jpg",
+      "description": "Consola de nueva generación con SSD ultrarrápido, ray tracing y compatibilidad con juegos PS4 y PS5.",
+      "quantity": 7,
+      "promotion": true,
+      "category": "Consolas",
+      "brand": "Sony",
+      "characteristics": {
+        "almacenamiento": "1TB SSD",
+        "resolucion": "4K 120fps",
+        "raytracing": "Si",
+        "control": "DualSense incluido"
+      }
+    },
+    {
+      "id": 22,
+      "name": "Libro El Arte de la Guerra - Sun Tzu",
+      "price": 45000,
+      "priceDisplay": "$45.000",
+      "image": "images/products/22-libro-arte-guerra.jpg",
+      "description": "Clásico tratado de estrategia militar aplicable a los negocios y la vida. Edición pocket en español.",
+      "quantity": 60,
+      "promotion": false,
+      "category": "Libros",
+      "brand": "Editorial Planeta",
+      "characteristics": {
+        "idioma": "Español",
+        "paginas": "160",
+        "formato": "Pocket",
+        "autor": "Sun Tzu"
+      }
+    }
+  ]
+}

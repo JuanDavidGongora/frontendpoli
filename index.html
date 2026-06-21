@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechGamers Solution</title>
+    <title>TechGamers Solution - Catálogo Virtual</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
@@ -11,8 +11,9 @@
         <nav>
             <ul>
                 <li><a href="#home">Inicio</a></li>
-                <li><a href="#services">Servicios</a></li>
-                <li><a href="login.html">Login</a></li>
+                <li><a href="#catalog">Catálogo</a></li>
+                <li><a href="cart.html" class="cart-link">Carrito <span id="cart-badge" class="cart-badge">0</span></a></li>
+                <li id="user-session"><a href="login.html">Iniciar sesión</a></li>
             </ul>
         </nav>
     </header>
@@ -20,32 +21,108 @@
     <main>
         <section id="home">
             <div class="slider">
-                <img src="images/slider1.jpg" alt="Slider 1">
-                <img src="images/msititan.jpeg" alt="Slider 2">
-                <img src="images/razer.jpg" alt="Slider 3">
+                <img src="images/slider1.jpg" alt="Gaming Setup" class="active">
+                <img src="images/msititan.jpeg" alt="Componentes MSI">
+                <img src="images/razer.jpg" alt="Periféricos Razer">
             </div>
             <div class="home-content">
                 <img src="images/logo.jpg" alt="Logo de la Empresa" class="company-logo">
                 <h1 class="company-name">TechGamers Solution</h1>
-                <p>En TechGamers Solution, transformamos tu pasión por el gaming en rendimiento puro.
-                    Somos el arsenal definitivo para el jugador que busca más FPS, cero lag y una ventaja competitiva real.
-                    Desde procesadores que rompen todos los límites y memorias RAM ultrarrápidas, hasta periféricos con precisión milimétrica
-                    que responden a la velocidad de tus reflejos. No vendemos componentes, forjamos victorias. Eleva tu juego, equipa tu poder.</p>
+                <p>Catálogo virtual de artículos gaming, electrónicos, ropa, libros y más. Encuentra lo que necesitas con nuestra búsqueda básica y avanzada, agrégalo al carrito y realiza tu pedido.</p>
             </div>
         </section>
 
-        <section id="services">
-            <h2>Nuestros Servicios</h2>
-            <div class="services-list" id="services-list">
-                <!-- Los servicios se cargarán dinámicamente aquí -->
+        <section id="catalog">
+            <h2>Catálogo Virtual</h2>
+            <p class="catalog-count">Más de 20 artículos disponibles</p>
+
+            <div class="search-section">
+                <h3>Búsqueda básica</h3>
+                <div class="search-bar">
+                    <input type="text" id="search-basic" placeholder="Buscar artículo por nombre...">
+                    <button id="search-btn" class="btn-primary">Buscar</button>
+                </div>
             </div>
+
+            <div class="search-section">
+                <button id="advanced-toggle" class="btn-secondary">Búsqueda avanzada ▼</button>
+                <div id="advanced-search-panel" class="advanced-panel">
+                    <h3>Búsqueda avanzada por características</h3>
+                    <div class="filters-grid">
+                        <div class="filter-group">
+                            <label for="filter-category">Categoría</label>
+                            <select id="filter-category">
+                                <option value="">Todas</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="filter-brand">Marca</label>
+                            <select id="filter-brand">
+                                <option value="">Todas</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="filter-promotion">Promoción</label>
+                            <select id="filter-promotion">
+                                <option value="">Todas</option>
+                                <option value="true">En promoción</option>
+                                <option value="false">Sin promoción</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="filter-min-price">Precio mínimo</label>
+                            <input type="number" id="filter-min-price" placeholder="Ej: 50000" min="0">
+                        </div>
+                        <div class="filter-group">
+                            <label for="filter-max-price">Precio máximo</label>
+                            <input type="number" id="filter-max-price" placeholder="Ej: 5000000" min="0">
+                        </div>
+                        <div class="filter-group">
+                            <label for="filter-min-stock">Stock mínimo</label>
+                            <input type="number" id="filter-min-stock" placeholder="Ej: 5" min="0">
+                        </div>
+                        <div class="filter-group">
+                            <label for="filter-char-key">Característica</label>
+                            <input type="text" id="filter-char-key" placeholder="Ej: ram, procesador">
+                        </div>
+                        <div class="filter-group">
+                            <label for="filter-char-value">Valor</label>
+                            <input type="text" id="filter-char-value" placeholder="Ej: 32GB">
+                        </div>
+                    </div>
+                    <div class="filter-actions">
+                        <button id="apply-advanced" class="btn-primary">Aplicar filtros</button>
+                        <button id="clear-advanced" class="btn-secondary">Limpiar filtros</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="catalog-list" id="catalog-list"></div>
         </section>
     </main>
+
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <button id="modal-close" class="modal-close">&times;</button>
+            <img id="modal-image" alt="Producto">
+            <h2 id="modal-name"></h2>
+            <p id="modal-price" class="product-price"></p>
+            <p id="modal-stock"></p>
+            <p id="modal-category"></p>
+            <p id="modal-promotion" class="promo-text"></p>
+            <p id="modal-description" class="modal-description"></p>
+            <h4>Características:</h4>
+            <ul id="modal-characteristics"></ul>
+        </div>
+    </div>
 
     <footer>
         <p>&copy; 2025 TechGamers Solution. Todos los derechos reservados.</p>
     </footer>
 
-    <script src="scripts/script.js"></script>
+    <script src="scripts/products.js"></script>
+    <script src="scripts/auth.js"></script>
+    <script src="scripts/cart.js"></script>
+    <script src="scripts/catalog.js"></script>
 </body>
 </html>

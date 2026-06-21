@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Artículo - TechGamers</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html#catalog">Catálogo</a></li>
+                <li><a href="cart.html" class="cart-link">Carrito <span id="cart-badge" class="cart-badge">0</span></a></li>
+                <li><a href="login.html">Iniciar sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="product-detail">
+            <div class="product-detail-container">
+                <img id="product-image" alt="Artículo" title="Clic para ampliar descripción">
+                <div class="product-detail-info">
+                    <h2 id="product-name"></h2>
+                    <p id="product-price" class="product-price"></p>
+                    <p id="product-category"></p>
+                    <p id="product-quantity"></p>
+                    <p id="product-promotion" class="promo-text"></p>
+                    <p id="product-description" class="product-description"></p>
+                    <h4>Características:</h4>
+                    <ul id="product-characteristics"></ul>
+                    <div class="purchase-section">
+                        <label for="purchase-qty">Cantidad:</label>
+                        <input type="number" id="purchase-qty" min="1" value="1">
+                        <button id="btn-add-cart" class="btn-primary">Agregar al carrito</button>
+                        <button id="btn-buy-now" class="btn-secondary">Comprar ahora</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 TechGamers Solution. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="scripts/products.js"></script>
+    <script src="scripts/auth.js"></script>
+    <script src="scripts/cart.js"></script>
+    <script src="scripts/product-detail.js"></script>
+</body>
+</html>

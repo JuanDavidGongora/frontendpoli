@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Cliente - TechGamers</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div class="login-container">
+        <img src="images/logo.jpg" alt="Logo" class="login-logo">
+        <h2>Registro de Cliente</h2>
+        <p class="login-info">Crea tu cuenta para realizar pedidos en el catálogo</p>
+        <form id="register-form">
+            <input type="text" id="reg-username" placeholder="Nombre de usuario" required>
+            <input type="email" id="reg-email" placeholder="Correo electrónico" required>
+            <input type="password" id="reg-password" placeholder="Contraseña" required>
+            <input type="password" id="reg-confirm" placeholder="Confirmar contraseña" required>
+            <button type="submit" class="login-button">Crear cuenta</button>
+        </form>
+        <p class="auth-link">¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a></p>
+        <p class="auth-link"><a href="index.html">Volver al catálogo</a></p>
+    </div>
+
+    <script src="scripts/auth.js"></script>
+    <script src="scripts/login.js"></script>
+</body>
+</html>

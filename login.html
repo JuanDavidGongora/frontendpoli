@@ -3,21 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Administrador</title>
+    <title>Iniciar Sesión - TechGamers</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
     <div class="login-container">
-        <img src="images/logo.jpg" alt="Logo de la Empresa" class="login-logo">
-        <h2>Login Administrador</h2>
+        <img src="images/logo.jpg" alt="Logo" class="login-logo">
+        <h2>Iniciar Sesión</h2>
+        <p class="login-info">Debes estar registrado para realizar pedidos</p>
         <form id="login-form">
             <input type="text" id="username" placeholder="Usuario" required>
             <input type="password" id="password" placeholder="Contraseña" required>
-            <button type="submit" class="login-button">Conectar</button>
+            <button type="submit" class="login-button">Iniciar sesión</button>
         </form>
-        <button id="create-account-btn" class="login-button">Crear Cuenta</button>
+        <p class="auth-link">¿No tienes cuenta? <a href="register.html">Regístrate aquí</a></p>
+        <p class="auth-link"><a href="index.html">Volver al catálogo</a></p>
     </div>
 
-    <script src="scripts/script.js"></script>
+    <script src="scripts/auth.js"></script>
+    <script src="scripts/login.js"></script>
 </body>
 </html>

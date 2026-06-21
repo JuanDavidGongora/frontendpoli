@@ -1,54 +1,56 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Obtener servicios de localStorage o JSON
-    function getServices() {
-        const local = JSON.parse(localStorage.getItem('services'));
-        if (local && Array.isArray(local)) return Promise.resolve(local);
-        return fetch('data/services.json')
-            .then(res => res.json())
-            .then(data => data.services || []);
+    if (!AuthAPI.isAdmin()) {
+        alert('Acceso restringido. Inicia sesión como administrador.');
+        window.location.href = 'login.html';
+        return;
     }
 
-    // Mostrar servicios en el panel con botón eliminar
-    function renderServices(services) {
+    function getProducts() {
+        return ProductsAPI.getProducts();
+    }
+
+    function renderProducts(products) {
         const list = document.getElementById('services-list');
         list.innerHTML = '';
-        services.forEach(service => {
+        products.forEach(product => {
             const div = document.createElement('div');
-            div.className = 'service-item';
+            div.className = 'product-card admin-card';
             div.innerHTML = `
-                <img src="${service.image}" alt="${service.name}">
-                <h3>${service.name}</h3>
-                <p>${service.price}</p>
-                <button class="delete-btn" data-id="${service.id}">Eliminar</button>
+                <img src="${product.image}" alt="${product.name}">
+                <h3>${product.name}</h3>
+                <p>${product.priceDisplay}</p>
+                <p>Stock: ${product.quantity}</p>
+                <button class="btn-remove delete-btn" data-id="${product.id}">Eliminar</button>
             `;
             list.appendChild(div);
         });
 
-        // Asignar evento a los botones de eliminar
-        const deleteButtons = document.querySelectorAll('.delete-btn');
-        deleteButtons.forEach(btn => {
+        document.querySelectorAll('.delete-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 const id = btn.getAttribute('data-id');
-                let services = JSON.parse(localStorage.getItem('services')) || [];
-                services = services.filter(s => s.id != id);
-                localStorage.setItem('services', JSON.stringify(services));
-                renderServices(services);
+                getProducts().then(products => {
+                    const updated = products.filter(p => p.id != id);
+                    ProductsAPI.saveProducts(updated);
+                    renderProducts(updated);
+                });
             });
         });
     }
 
-    // Manejar el formulario de agregar servicio
     const form = document.getElementById('add-service-form');
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
         const name = document.getElementById('service-name').value;
-        const price = document.getElementById('service-price').value;
+        const priceStr = document.getElementById('service-price').value.replace(/\D/g, '');
+        const price = parseInt(priceStr) || 0;
         const description = document.getElementById('service-description').value;
+        const category = document.getElementById('service-category').value || 'General';
+        const brand = document.getElementById('service-brand').value || 'TechGamers';
+        const quantity = parseInt(document.getElementById('service-quantity').value) || 1;
         const imageInput = document.getElementById('service-image');
         const file = imageInput.files[0];
 
-        // Convertir imagen a base64
-        let image = '';
+        let image = 'images/products/default.jpg';
         if (file) {
             image = await new Promise(resolve => {
                 const reader = new FileReader();
@@ -57,37 +59,29 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        let services = JSON.parse(localStorage.getItem('services')) || [];
-        const id = Date.now(); // ID único
-        services.push({
-            id,
+        const products = await getProducts();
+        products.push({
+            id: Date.now(),
             name,
             price,
+            priceDisplay: ProductsAPI.formatPrice(price),
             image,
             description,
-            quantity: 1,
-            promotion: false
+            quantity,
+            promotion: false,
+            category,
+            brand,
+            characteristics: {}
         });
-        localStorage.setItem('services', JSON.stringify(services));
-        renderServices(services);
+        ProductsAPI.saveProducts(products);
+        renderProducts(products);
         form.reset();
-        alert('Servicio añadido correctamente');
+        alert('Artículo añadido correctamente');
     });
 
-    // Inicializar lista de servicios
-    getServices().then(services => {
-        // Si es la primera vez, guarda los servicios iniciales en localStorage
-        if (!localStorage.getItem('services')) {
-            localStorage.setItem('services', JSON.stringify(services));
-        }
-        renderServices(services);
-    });
+    getProducts().then(renderProducts);
 
-    // Botón para ir a inicio
-    const goHomeBtn = document.getElementById('go-home-btn');
-    if (goHomeBtn) {
-        goHomeBtn.addEventListener('click', () => {
-            window.location.href = 'index.html';
-        });
-    }
+    document.getElementById('go-home-btn').addEventListener('click', () => {
+        window.location.href = 'index.html';
+    });
 });
